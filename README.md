@@ -37,7 +37,6 @@ Things you may want to cover:
 
 ### Association
 - has_many :items
-- has_many :comments
 - has_many :histories
 
 ## itemsテーブル
@@ -55,8 +54,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- belongs_to :item
-- has_many :comments
+- belongs_to :history
 
 ## destinationsテーブル(配送先住所)
 |column       |type      |options    |
@@ -72,17 +70,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :history
 
-## commentsテーブル
-|column    |type      |options   |
-|----------| ---------| -------  |
-|content   |string    |null: false|
-|user      |references|null: false, foreign_key: true|
-|item      |references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-- belongs_to :item
-
 
 ## historiesテーブル(購入管理)
 |column |type       |options   |
@@ -92,4 +79,5 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- has_many :destinations
+- belongs_to :item
+- belongs_to :destination
