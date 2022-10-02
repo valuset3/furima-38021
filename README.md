@@ -54,7 +54,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- belongs_to :history
+- has_one :history
 
 ## destinationsテーブル(配送先住所)
 |column       |type      |options    |
