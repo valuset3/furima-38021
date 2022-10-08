@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
   validates :birthday, presence: true
-  VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
   with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: '全角文字を使用してください' } do
     validates :family_name, :first_name, :family_name_kana, :first_name_kana
   end
