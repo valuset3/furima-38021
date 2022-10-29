@@ -64,11 +64,11 @@ RSpec.describe OrderForm, type: :model do
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include('Post code is invalid. Include hyphen(-)')
       end
-      # it '都道府県が「---」だと保存できないこと' do
-      #   @order_form.prefecture_id = 0
-      #   @order_form.valid?
-      #   expect(@order_form.errors.full_messages).to include("Prefecture can't be blank")
-      # end
+      it '都道府県が「---」だと保存できないこと' do
+        @order_form.prefecture_id = 0
+        @order_form.valid?
+        expect(@order_form.errors.full_messages).to include("Prefecture can't be blank")
+      end
       it '都道府県が空だと保存できないこと' do
         @order_form.prefecture_id = nil
         @order_form.valid?
@@ -99,11 +99,11 @@ RSpec.describe OrderForm, type: :model do
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include('Phone number is invalid')
       end
-      # it 'トークンが空だと保存できないこと' do
-      #   @order_form.token = nil
-      #   @order_form.valid?
-      #   expect(@order_form.errors.full_messages).to include("Token can't be blank")
-      # end
+      it 'トークンが空だと保存できないこと' do
+        @order_form.token = nil
+        @order_form.valid?
+        expect(@order_form.errors.full_messages).to include("Token can't be blank")
+      end
     end
   end
 end
