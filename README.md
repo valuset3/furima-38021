@@ -54,7 +54,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- has_one :history
+- has_one :order
 
 ## destinationsテーブル(配送先住所)
 |column       |type      |options    |
@@ -65,13 +65,13 @@ Things you may want to cover:
 |address      |string    |null: false|
 |building_name|string    |           |
 |phone_number |string    |null: false|
-|history      |references|null: false, foreign_key: true|
+|order        |references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :history
+- belongs_to :order
 
 
-## historiesテーブル(購入管理)
+## ordersテーブル(購入管理)
 |column |type       |options   |
 |-------| --------- | ------   |
 |user   |references |null: false, foreign_key: true|
