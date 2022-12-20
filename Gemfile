@@ -68,3 +68,6 @@ gem 'active_hash'
 gem 'payjp'
 gem 'pry-rails'
 gem "aws-sdk-s3", require: false
+group :production do
+  gem 'pg'
+end
